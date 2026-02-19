@@ -158,8 +158,8 @@ Termination Condition :
 ## Result 
 
 For example, the computer generated number is 534 :
-If the user input is `345`, then the result is `0 strike, 3 ball`
-If the user input is `543`, then the result is `1 strike, 2 ball` 
+- If the user input is `345`, then the result is `0 strike, 3 ball`
+- If the user input is `543`, then the result is `1 strike, 2 ball` 
 
 --- 
 
