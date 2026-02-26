@@ -1,7 +1,0 @@
-flask
-pdfplumber
-tiktoken
-openai
-numpy
-scikit-learn
-PyPDF2
