@@ -1,0 +1,10 @@
+Neural networks are composed of layers of neurons.
+Each neuron computes a weighted sum of inputs and applies an activation function.
+
+Backpropagation is the algorithm used to train neural networks.
+It computes gradients using the chain rule and updates weights using gradient descent.
+
+Gradient descent is an optimization algorithm that minimizes loss by iteratively updating parameters.
+
+Overfitting occurs when a model performs well on training data but poorly on unseen data.
+Regularization techniques such as dropout and L2 regularization help reduce overfitting.

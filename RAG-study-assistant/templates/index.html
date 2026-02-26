@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RAG Study Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="card">
+    <h2>📚 Flashcard Generator</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit" name="action" value="flashcards">✨ Generate Flashcards</button>
+    </form>
+
+    <h2>❓ Q&A Generator</h2>
+    <form method="POST">
+        <textarea name="question_context" placeholder="Paste text for Q&A" rows="6" style="width:100%;"></textarea>
+        <button type="submit" name="action" value="qa">✨ Generate Q&A</button>
+    </form>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    {% if flashcards %}
+    <div class="flashcard-grid">
+        {% for card in flashcards %}
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front"><p>{{ card.question }}</p></div>
+                <div class="flashcard-back"><p>{{ card.answer }}</p></div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if qa_pairs %}
+    <div class="qa-grid">
+        {% for pair in qa_pairs %}
+        <div class="qa-pair">
+            <p><strong>Q:</strong> {{ pair.question }}</p>
+            <p><strong>A:</strong> {{ pair.answer }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>
